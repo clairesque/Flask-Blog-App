@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Claire's Beauty Blog</title>
+  <link rel="stylesheet" type=text/css href="..\static\styles\login-styling.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,800" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:300" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Gentium+Basic&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+
+    <div class="center">
+      <p class="active"> claire's <span class="logo">
+          beauty blog </span></p>
+    </div>
+    <div class="navbar">
+
+        <a href="/" style="text-decoration: none" class="selected">about</a>
+        {% if session['logged in'] == True %}
+        <a style="text-decoration: none" href="account">profile</a>
+        {% else %}
+        <a style="text-decoration: none" href="login">login</a>
+        {% endif %}
+        <a style="text-decoration: none" href="reviews">reviews</a>
+        <a style="text-decoration: none" href="news">news</a>
+        <a style="text-decoration: none" href="stats">statistics</a>
+        <a style="text-decoration: none" href="guestbook">guestbook</a>
+        <a style="text-decoration: none" href="contact">contact</a>
+
+    </div>
+
+
+
+
+
+    <div class="container">
+      <div class="welcome">
+        <div class="pinkbox">
+          <div class="signup">
+            <h1>contact <br>me</h1>
+            <form method="POST" action="">
+              <input type="text" placeholder="name" name="name">
+              <input name="email" type="email" placeholder="email">
+              <input name="message" type="text" placeholder="message">
+              <button type="submit" class="button submit">submit </button>
+              <p class="msg"> {{msg}} </p>
+            </form>
+          </div>
+
+        </div>
+        <div class="leftbox">
+          <h2 class="title"><span></span><br></h2>
+          <p class="desc">find the best makeup <span>for you</span></p>
+          <img class="flower smaller" src="../static/images/lipstick.png" alt="1357d638624297b" border="0">
+
+        </div>
+        <div class="rightbox">
+          <h2 class="title"><span>CLAIRE'S</span>BEAUTY<br>BLOG</h2>
+          <p class="desc">find the best makeup <span>for you</span></p>
+          <img class="flower" src="../static/images/nailpolish.png" />
+          <p class="account" style="color:black">want to personally contact me?</p>
+          <p class="desc"> phone no: 056 2399224
+        </div>
+      </div>
+    </div>
+
+
+
+</body>
+
+</html>

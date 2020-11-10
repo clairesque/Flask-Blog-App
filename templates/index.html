@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Claire's Beauty Blog</title>
+  <link rel="stylesheet" type=text/css href="..\static\styles\stylesheet.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,800" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:300" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Gentium+Basic&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    
+    <div class="center">
+    <p class="active"> claire's <span class="logo"> 
+      beauty blog </span></p>
+    </div>
+    <div class="navbar">
+ 
+        <a href="/" style="text-decoration: none" class="selected">about</a>
+        {% if session['logged in'] == True %}
+        <a style="text-decoration: none" href="account">profile</a>
+        {% else %}
+        <a style="text-decoration: none" href="login">login</a>
+        {% endif %}
+        <a style="text-decoration: none" href="reviews">reviews</a>
+        <a style="text-decoration: none" href="news">news</a>
+        <a style="text-decoration: none" href="stats">statistics</a>
+        <a style="text-decoration: none" href="guestbook">guestbook</a>
+        <a style="text-decoration: none" href="contact">contact</a>
+       
+  
+    </div>
+    
+  </header>
+
+
+
+<div class=wrapper3>
+      <div id="current" class="wrapper2">
+        {% for days in day %}		
+        <h1 class="location">Dubai, UAE - {{ days[1] }} </h1>
+       <h2 class="date">{{ days[0] }}</h2> 
+      
+        {% endfor %}
+       
+        <div class="forecast">
+          {% for days in threeday %}
+          <div class="three-day">
+          <p class="day-style">{{days[0]}}</p>
+          <p>{{days[1]}}</p>
+          <br>
+          </div>
+          {% endfor %}
+      
+          </div>
+        
+        </div>
+</div>
+
+ <div class="container1">
+  <div class="images">
+    <img id ="selfie" src="..\static\images\selfie.jpg"> 
+  </div>
+  
+  
+  <div class="product">
+    <p class="name">Clerissa Lewis</p>
+    <h1 class="about">About Me</h1>
+    
+    <p class="desc">Hi! I am Clerissa (or Claire), a 19-year-old who is a beauty addict. I major in IT,
+       but giving myself a makeover and catching up on the latest 
+       beauty trends are few of my pasttimes! If you have any questions or suggestions for my website,
+       don't hesitate to contact me through the
+        <a href="#contact" style="text-decoration: none; color:black">contact page</a>. </strong></p> 
+   
+  </div>
+</div>   
+
+
+
+
+    
+
+
+
+
+<br>
+
+
+</body>
+</html>

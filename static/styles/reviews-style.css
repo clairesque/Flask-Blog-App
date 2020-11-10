@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css?family=Karla:400,700|Karma:300|Nunito:300,400,700');
+@import url('https://fonts.googleapis.com/css?family=Lato:300,700');
+
+body {
+  
+    
+  margin:0;
+    font-family: 'Lato', sans-serif;
+    background-color: black;
+  }
+    
+  
+    
+    /* navigation bar */
+    
+    .navbar {
+      position: relative;
+      overflow: hidden;
+      padding-left: 0.3%;
+      padding-top:0.7%;
+      padding-bottom:0.7%;
+      background-color: #81cce8;
+      border-bottom: 4px solid white;
+      border-top: 4px solid white;
+      
+    }
+    
+    
+    .active{
+        color:#4E4E4E;
+    }
+    
+    .navbar a {
+      display: inline-block;
+      position: relative;
+      font-family:'Karma', serif;
+      text-decoration: none;
+      letter-spacing: -1px;
+      font-weight:600;
+      text-decoration: none;
+      font-size: 1.5em;
+      color:black;
+      margin: 0 2.5em;
+      
+   }
+   .navbar a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      border-bottom: 6px solid #fff;
+      
+      transition: 0.4s;
+   }
+   .navbar a::after:hover {
+      width: 100%;
+   }
+   .navbar a:hover:after {
+      width: 100%;
+   }
+    
+    .selected {
+      color: black;
+    }
+    .center p {
+      float: none;
+      margin-bottom:0%;
+      margin-left: 61.25%;
+      margin-top:2.5%;
+      transform: translate(-50%, -50%);
+      font-weight: bolder;
+      font-size: 27px;
+      font-family:'Karma', serif;
+      color:white;
+    }
+    
+    .logo {
+      font-family: "Alegreya Sans", sans-serif;
+      background-color: #81cce8;
+      border-radius:3%;
+      color: white;
+      letter-spacing: 2px;
+    }
+
+  .reviews-title {
+        padding-top: 10%;
+        padding-left:19%;
+        text-align:center;
+        font-size: 40px;
+        font-family: "Questrial", sans-serif;
+        letter-spacing: 2px;
+        color: white;
+        
+      }
+      #error {
+        color: white;
+        font-size: 20px;
+        font-family: "Questrial", sans-serif;
+        padding-left:20%;
+      }
+      
+      .link-styling{
+        text-decoration: none;
+        color:black;
+        text-align: center;
+        float: right;
+        padding-top:6%;
+      }
+
+     .wrapper {
+       display: flex;
+       margin-left:36.25%;
+      
+     }
+      .product1{
+          width:50%;
+          
+          background-color: #81cce8;
+        padding: 1rem;
+       
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        line-height: 2em;
+        font-family: "Questrial", sans-serif;
+        letter-spacing:2px;
+        
+          }
+     
+      .product2{ 
+        
+          width: 50%;
+          background-color: #81cce8;
+        padding: 1rem;
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        line-height: 2em;
+        font-family: "Questrial", sans-serif;        
+        letter-spacing:2px;
+        
+          }
+      
+      .product3{
+          width: 50%;
+         
+          background-color: #81cce8;
+        padding: 1rem;
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        line-height: 2em;
+        font-family: "Questrial", sans-serif;
+        letter-spacing:2px;
+       
+          }
+
+          .product4{
+            width: 50%;
+        
+            background-color: #81cce8;
+          padding: 1rem;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          line-height: 2em;
+          font-family: "Questrial", sans-serif;
+          letter-spacing:2px;
+       
+            }
+     
+            .product5{
+              width: 50%;
+             
+              background-color: #81cce8;
+            padding: 1rem;
+              box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            line-height: 2em;
+            font-family: "Questrial", sans-serif;
+            letter-spacing:2px;
+           
+              }
+    
+
+
+
+ .search-box {
+	 display: flex;
+	 float:right;
+   height: 100vh;
+   margin-top:3%;
+   margin-right:3%;
+}
+ input[type=search] {
+	 box-shadow: 10px 10px 4px rgba(0, 0, 0, .4);
+	 background: #fff;
+	 border: 2px solid #81cce8;
+	 outline: none;
+	 width: 230px;
+	 height: 50px;
+	 border-radius: 15px 0 0 15px;
+	 font-size: 1.4em;
+	 font-weight: 300;
+	 padding: 0px 10px;
+	 font-family: 'Lato', sans-serif;
+	 letter-spacing: 2px;
+	 text-transform: uppercase;
+	 color: #81cce8;
+}
+ ::placeholder {
+	 color: black;
+	 font-size: 0.8em;
+}
+ .search-btn {
+	 box-shadow: 10px 10px 4px rgba(0, 0, 0, .4);
+	 height: 50px;
+	 width: 55px;
+	 outline: none;
+	 border-radius: 0 15px 15px 0;
+	 background: #81cce8;
+	 color: #fff;
+	 border: none;
+	 transition: all 0.3s ease;
+}
+ .search-btn:hover {
+	 transition: all 0.3s ease;
+}
+ .search-btn:hover i {
+	 font-size: 2.5em;
+}
+ .search-btn i {
+	 font-size: 2.3em;
+}
+
+#myUL {
+  list-style-type: none;
+}
+ 

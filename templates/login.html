@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Claire's Beauty Blog</title>
+  <link rel="stylesheet" type=text/css href="..\static\styles\login-styling.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,800" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:300" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Gentium+Basic&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+
+    <div class="center">
+      <p class="active"> claire's <span class="logo">
+          beauty blog </span></p>
+    </div>
+    <div class="navbar">
+
+        <a href="/" style="text-decoration: none" class="selected">about</a>
+        {% if session['logged in'] == True %}
+        <a style="text-decoration: none" href="account">profile</a>
+        {% else %}
+        <a style="text-decoration: none" href="login">login</a>
+        {% endif %}
+        <a style="text-decoration: none" href="reviews">reviews</a>
+        <a style="text-decoration: none" href="news">news</a>
+        <a style="text-decoration: none" href="stats">statistics</a>
+        <a style="text-decoration: none" href="guestbook">guestbook</a>
+        <a style="text-decoration: none" href="contact">contact</a>
+
+    </div>
+
+
+
+ 
+
+  <div class="container">
+    <div class="welcome">
+      <div class="pinkbox">
+        <div class="signup nodisplay">
+          <h1>register</h1>
+          <form autocomplete="off" method="POST" action="">
+            <input name = "user" type="text" placeholder="username">
+            <input name = "email" type="email" placeholder="email">
+            <input name = "pass" type="password" placeholder="password">
+            <input name = "pass" type="password" placeholder="confirm password">
+            <button type ="submit" class="button submit">create account </button>
+          </form>
+        </div>
+        <div class="signin">
+          <h1>sign in</h1>
+          <form class="more-padding" autocomplete="off" method="POST" action="">
+            <input name = "username" type="text" placeholder="username">
+            <input name="password" type="password" placeholder="password">
+            
+  
+            <button type="submit" class="button submit">login</button>
+            <p class ="error">{{msg}} {{session['username']}}
+          </form>
+        </div>
+      </div>
+      <div class="leftbox">
+        <h2 class="title"><span></span><br></h2>
+        <p class="desc">find the best makeup <span>for you</span></p>
+        <img class="flower smaller" src="../static/images/lipstick.png" alt="1357d638624297b" border="0">
+        <p class="account">have an account?</p>
+        <button class="button" id="signin" style="text-decoration: none;">login</button>
+      </div>
+      <div class="rightbox">
+        <h2 class="title"><span>CLAIRE'S</span>BEAUTY<br>BLOG</h2>
+        <p class="desc">find the best makeup <span>for you</span></p>
+        <img class="flower" src="../static/images/nailpolish.png"/>
+        <p class="account">don't have an account?</p>
+        <button class="button" id="signup"><a href="register">sign up </a></button>
+      </div>
+    </div>
+   </div>
+  
+  
+  
+</body>
+
+</html>

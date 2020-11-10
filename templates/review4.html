@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NARS Morocco Lipstick</title>
+  <link rel="stylesheet" type=text/css href="../static/styles/reviews-style2.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,800" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:300" rel="stylesheet">
+
+</head>
+
+<body>
+  <header>
+
+    <div class="center">
+      <p class="active"> claire's <span class="logo">
+          beauty blog </span></p>
+    </div>
+    <div class="navbar">
+
+        <a href="/" style="text-decoration: none" class="selected">about</a>
+        {% if session['logged in'] == True %}
+        <a style="text-decoration: none" href="account">profile</a>
+        {% else %}
+        <a style="text-decoration: none" href="login">login</a>
+        {% endif %}
+        <a style="text-decoration: none" href="reviews">reviews</a>
+        <a style="text-decoration: none" href="news">news</a>
+        <a style="text-decoration: none" href="stats">statistics</a>
+        <a style="text-decoration: none" href="guestbook">guestbook</a>
+        <a style="text-decoration: none" href="contact">contact</a>
+
+
+    </div>
+    
+  </header>
+ <div class="wrapper">
+  <div class="container">
+    <div class="images">
+      <img class ="image" src="..\static\images\lipstick1.png"> 
+    </div>
+    
+    
+    <div class="product">
+      <p class="brand">NARS</p>
+      <h1 class="name">Morocco Lipstick</h1>
+      <h2 class="rating">5.0 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star "></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+        </h2>
+      <p class="desc">Infamous shades. Infinite expression. Presenting NARS’ original collection: the 12 shades that changed beauty and challenged convention. Pigment. Performance. Passion. 
+          Perfection. The first of its kind. The last word on lipstick.
+            
+       </p> 
+      <h3 class="price"> $26 </h3>
+     
+    </div>
+  </div>   
+
+
+  <div class="container2">
+      <div class="form">
+        <h1 class="reviews"> Reviews </h1>
+        
+        {% block content %}
+        {% if session['logged in'] == True %}
+        
+      <form action="{{ url_for('sign4') }}" method=post>
+        <dl>
+          
+      
+          <dd><input class ="commentBox" type=textarea placeholder ="Enter your review here." name=comment>
+          <dd><input class="submit" type=submit value=Post>
+        </dl>
+      </form>
+  <br>
+        {% else %}
+        <p style="color:white"> You need to be a logged in user to be able to post comments! Please <a href='login' style="text-decoration:none">login.</a></p>
+        {% endif %}
+        {% endblock %}
+      </div>
+   
+          
+   
+       
+              
+         
+            
+                {% for entry in entries %}
+              <ul class="clearfix comments">
+                <li> <span class= "name1"> {{ entry[0] }} </span> <span class="comment">{{ entry[1] }}</span></li>
+                
+              </ul>
+            
+            {% endfor %}
+      
+       
+      </div>
+  
+
+
+</body>
+
+</html>

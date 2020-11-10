@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>L'Oréal Lash Paradise Washable Mascara</title>
+  <link rel="stylesheet" type=text/css href="../static/styles/reviews-style2.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,800" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:300" rel="stylesheet">
+
+</head>
+
+<body>
+  <header>
+
+    <div class="center">
+      <p class="active"> claire's <span class="logo">
+          beauty blog </span></p>
+    </div>
+    <div class="navbar">
+
+        <a href="/" style="text-decoration: none" class="selected">about</a>
+        {% if session['logged in'] == True %}
+        <a style="text-decoration: none" href="account">profile
+        </a>
+        {% else %}
+        <a style="text-decoration: none" href="login">login</a>
+        {% endif %}
+        <a style="text-decoration: none" href="reviews">reviews</a>
+        <a style="text-decoration: none" href="news">news</a>
+        <a style="text-decoration: none" href="stats">statistics</a>
+        <a style="text-decoration: none" href="guestbook">guestbook</a>
+        <a style="text-decoration: none" href="contact">contact</a>
+
+    </div>
+    
+  </header>
+ 
+      
+    <div class="container2">
+      <h1 class="reviews" style="text-align:center"> Guestbook </h1>
+    {% for entry in entries %}
+    <ul class="clearfix comments">
+      <li> <span class= "name1"> {{ entry[0] }} </span> <span class="comment">{{ entry[1] }}</span></li>
+      
+    </ul>
+  
+  {% endfor %}
+      
+      
+     </div>
+</body>
+</html>

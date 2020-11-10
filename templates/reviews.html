@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reverse Dictionary</title>
+  <link rel="stylesheet" type=text/css href="..\static\styles\reviews-style.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,800" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:300" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Bootstrap CSS -->
+  <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
+  <style>
+      .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        font-size: 40px;
+        font-family:'Karma', serif;
+        font-weight: bold;
+      }
+      
+      
+      .heading {
+        animation-name: slideUp;
+        animation-duration: 2s;
+        margin: 5px;
+      }
+      
+      @keyframes slideDown {
+        0% {
+          opacity: 0;
+          transform: translateY(-40px);
+        }
+      
+        100% {
+          opacity: 1;
+          transform: translate(0);
+        }
+      }
+      
+      @keyframes slideUp {
+        0% {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+      
+        100% {
+          opacity: 1;
+          transform: translate(0);
+        }
+      }
+      </style>
+</head>
+
+<body style="background-color:black;">
+  <header>
+    <div class="center">
+      <p class="active"> claire's <span class="logo">
+          beauty blog </span></p>
+    </div>
+    <div class="navbar">
+
+        <a href="/" style="text-decoration: none" class="selected">about</a>
+        {% if session['logged in'] == True %}
+        <a style="text-decoration: none" href="account">profile</a>
+        {% else %}
+        <a style="text-decoration: none" href="login">login</a>
+        {% endif %}
+        <a style="text-decoration: none" href="reviews">reviews</a>
+        <a style="text-decoration: none" href="news">news</a>
+        <a style="text-decoration: none" href="stats">statistics</a>
+        <a style="text-decoration: none" href="guestbook">guestbook</a>
+        <a style="text-decoration: none" href="contact">contact</a>
+
+    </div>
+</header>
+    <div class="search-box">
+      <form autocomplete="off" method="POST" action="">
+
+      <input type="search" id="myInput" name="query" placeholder="Search">
+      <button type="submit" class="search-btn"><i class="fa fa-search"></i></button>
+      </form>
+    </div>
+
+
+
+      <div class="card-deck mt-1" style="margin-left: 35%; width: 550px;">
+  
+          <div class="row">
+              <div class="card p-4 m-4" style="width:300px; background-color:black;">
+                  <a href="https://mirabeauty.com/search/rawquery/{{queryLink}}"></a> <img src="{{image}}" class="card-img-top"> </a>
+                  <div class="card-body">
+                        <a href="https://mirabeauty.com/search/rawquery/{{queryLink}}"> <h5 style="background-color: white; border-radius: 5px; font-size: 1rem; text-align:center; color:black;"  class="card-title">{{title}}</h5> </a>
+                      
+                  </div>
+                  
+              </div>
+          </div>
+      </div>
+
+    <h1 class="reviews-title"> Reviews </h1>
+    <div class="wrapper">
+        
+      <ul id="myUL">
+
+        <li><a href="review1" class="link-styling">
+
+            <div class="product1">
+              <img src="../static/images/mascara.jpg" style="width:100%">
+                
+              <div class="container2">
+                <p>L'Oréal Lash Paradise Mascara</p>
+              </div>
+            </div>
+          </a>
+        </li>
+
+        <li><a href="review2" class="link-styling">
+            <div class="product2">
+              <img src="../static/images/spray.jpg" style="width:100%">
+              <div class="container2">
+                <p>MAC Prep + Prime Fix Setting Spray</p>
+              </div>
+            </div>
+          </a>
+        </li>
+
+        <li><a href="review3" class="link-styling">
+            <div class="product3">
+              <img src="../static/images/powder.jpg" style="width:100%">
+              <div class="container2">
+                <p>Hourglass Veil Translucent Setting Powder</p>
+              </div>
+            </div>
+          </a>
+        </li>
+
+      <li><a href="review5" class="link-styling">
+        <div class="product5">
+          <img src="../static/images/foundation.jpg" style="width:100%">
+          <div class="container2">
+            <p>bareMinerals Performance Wear Liquid Foundation</p>
+          </div>
+        </div>
+      </a>
+    </li>
+
+    
+
+      </ul>
+
+    </div>
+
+    
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Claire's Beauty Blog</title>
+  <link rel="stylesheet" type=text/css href="..\static\styles\gueststyling.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,800" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:300" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Gentium+Basic&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+
+    <div class="center">
+      <p class="active"> claire's <span class="logo">
+          beauty blog </span></p>
+    </div>
+    <div class="navbar">
+
+        <a href="/" style="text-decoration: none" class="selected">about</a>
+        {% if session['logged in'] == True %}
+        <a style="text-decoration: none" href="account">profile</a>
+        {% else %}
+        <a style="text-decoration: none" href="login">login</a>
+        {% endif %}
+        <a style="text-decoration: none" href="reviews">reviews</a>
+        <a style="text-decoration: none" href="news">news</a>
+        <a style="text-decoration: none" href="stats">statistics</a>
+        <a style="text-decoration: none" href="guestbook">guestbook</a>
+        <a style="text-decoration: none" href="contact">contact</a>
+
+    </div>
+    <a id="searchIcon" onclick="myFunction()"><svg height="36" viewBox="0 0 36 36" width="36" url="/">
+        <path d="m25.0003151 23.8696046 6.4877784 5.5609529-.976187 1.138885-6.5705619-5.6319102c-1.9831826 1.7503778-4.5882314 2.8124677-7.4413446 2.8124677-6.2132034 0-11.25-5.0367966-11.25-11.25s5.0367966-11.25 11.25-11.25 11.25 5.0367966 11.25 11.25c0 2.818839-1.0367255 5.3955377-2.7496849 7.3696046zm-8.5003151 2.3803954c5.3847763 0 9.75-4.3652237 9.75-9.75s-4.3652237-9.75-9.75-9.75-9.75 4.3652237-9.75 9.75 4.3652237 9.75 9.75 9.75z"></path>
+      </svg></a>
+    <input type="text" id="search">
+  </header>
+  <script>
+    var click = document.getElementById("search");
+    document.getElementById("search").style.visibility = "hidden";
+    function myFunction() {
+      if (click.style.visibility === "hidden") {
+        click.style.visibility = "visible";
+      } else {
+        click.style.visibility = "hidden";
+      }
+    }
+  </script>
+
+  <!--<div class="guestbook">
+    <div class="picture">
+      <img id="makeup" src="makeup.jpg">
+    </div>-->
+    <div id="current">
+     	
+        <h1 class="location">{{ counterTitle1 }}  {{ counterNumber1 }} </h1>
+        <h1 class="location">{{ counterTitle2 }}  {{ counterNumber2 }} </h1>
+        <h1 class="location">{{ counterTitle3 }}  {{ counterNumber3 }} </h1>
+          <p class="date">STAY SAFE!</p>
+          
+             
+        </div>
+
+
+    <div id="full-form">
+        {% block content %}
+      <form class="form" action="{{ url_for('gsign') }}" method="post">
+        
+        <p class="sign" align="center">Send a message</p>
+        <dl>
+          
+       <dd> <input class="user" type="text"  placeholder="Name" name="name" style="text-align:center">
+       <dd><input class="pass" type="text" style="text-align:center" placeholder="Message" name="message">
+       <dd> <input class="submit" style="text-align:center" type="submit" placeholder="SUbmit">
+      </dl>
+        </form>
+        <p class="register" style="text-align:center">Want to see previous messages?<a href="view"> <br>View our guestbook!</a></p>
+        {% endblock %}
+    </div>
+
+    
+
+
+</body>
+
+</html>

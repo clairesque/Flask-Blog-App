@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Claire's Beauty Blog</title>
+  <link rel="stylesheet" type=text/css href="../static/styles/stylesheet.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,800" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:300" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Gentium+Basic&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
+<style>
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+      font-size: 40px;
+      font-family:'Karma', serif;
+      font-weight: bold;
+    }
+    
+    .main {
+      animation-name: slideDown;
+      animation-duration: 2s;
+      text-align:center;
+      font-family:'Karma', serif;
+      color: white;
+      margin-top:1%;
+    }
+    
+    .heading {
+      animation-name: slideUp;
+      animation-duration: 2s;
+      margin: 5px;
+    }
+    
+    @keyframes slideDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-40px);
+      }
+    
+      100% {
+        opacity: 1;
+        transform: translate(0);
+      }
+    }
+    
+    @keyframes slideUp {
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+    
+      100% {
+        opacity: 1;
+        transform: translate(0);
+      }
+    }
+    </style>
+</head>
+
+<body style="background-color:black;">
+  <header>
+    
+    <div class="center">
+    <p class="active"> claire's <span class="logo"> 
+      beauty blog </span></p>
+    </div>
+    <div class="navbar">
+ 
+        <a href="/" style="text-decoration: none" class="selected">about</a>
+        {% if session['logged in'] == True %}
+        <a style="text-decoration: none" href="account">profile</a>
+        {% else %}
+        <a style="text-decoration: none" href="login">login</a>
+        {% endif %}
+        <a style="text-decoration: none" href="reviews">reviews</a>
+        <a style="text-decoration: none" href="news">news</a>
+        <a style="text-decoration: none" href="stats">statistics</a>
+        <a style="text-decoration: none" href="guestbook">guestbook</a>
+        <a style="text-decoration: none" href="contact">contact</a>
+ 
+    </div>
+    
+  </header>
+ 
+  <div class="container">
+    
+
+  
+    <p class="main"><span>Makeup News</span></p>
+
+    <div class="card-deck mt-1" style="margin-left: 15%; width: 750px;">
+  
+      <div class="row">
+          <div class="card p-4 m-4 " style="width:500px;">
+              <a href="https://www.cosmopolitan.com{{ newsLink1 }}"> <img src="{{ newsImg1 }}" class="card-img-top" alt="..."> </a>
+              <div class="card-body">
+                    <a href="https://www.cosmopolitan.com{{ newsLink4 }}"> <h5 class="card-title">{{ newsHead1 }}</h5> </a>
+                  
+              </div>
+              
+          </div>
+      </div>
+      <br>
+
+      <div class="row">
+          <div class="card p-4 m-4 " style="width:500px;">
+              <a href="https://www.cosmopolitan.com{{ newsLink2 }}"> <img src="{{ newsImg2 }}" class="card-img-top" alt="..."> </a>
+              <div class="card-body">
+                    <a href="https://www.cosmopolitan.com{{ newsLink4 }}"> <h5 class="card-title">{{ newsHead2 }}</h5> </a>
+                  
+              </div>
+              
+          </div>
+      </div>
+      <br>
+      <div class="row">
+          <div class="card p-4 m-4 " style="width:500px;">
+              <a href="https://www.cosmopolitan.com{{ newsLink3 }}"> <img src="{{ newsImg3 }}" class="card-img-top" alt="..."> </a>
+              <div class="card-body">
+                    <a href="https://www.cosmopolitan.com{{ newsLink4 }}"> <h5 class="card-title">{{ newsHead3 }}</h5> </a>
+                  
+              </div>
+              
+          </div>
+      </div>
+  <br>
+  <div class="row">
+      <div class="card p-4 m-4 " style="width:500px;">
+          <a href="https://www.cosmopolitan.com{{ newsLink4 }}"> <img src="{{ newsImg4 }}" class="card-img-top" alt="..."> </a>
+          <div class="card-body">
+                <a href="https://www.cosmopolitan.com{{ newsLink4 }}"> <h5 class="card-title">{{ newsHead4 }}</h5> </a>
+              
+          </div>
+          
+      </div>
+  </div>
+  </div>
+</div>
+
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+
+
+

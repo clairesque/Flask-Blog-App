@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reverse Dictionary</title>
+  <link rel="stylesheet" type=text/css href="..\static\styles\stylesheet.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,800" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Coda&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:300" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <header>
+    <div class="center">
+      <p class="active"> claire's <span class="logo">
+          beauty blog </span></p>
+    </div>
+    <div class="navbar">
+
+        <a href="/" style="text-decoration: none" class="selected">about</a>
+        {% if session['logged in'] == True %}
+        <a style="text-decoration: none" href="account">profile</a>
+        {% else %}
+        <a style="text-decoration: none" href="login">login</a>
+        {% endif %}
+        <a style="text-decoration: none" href="reviews">reviews</a>
+        <a style="text-decoration: none" href="news">news</a>
+        <a style="text-decoration: none" href="stats">statistics</a>
+        <a style="text-decoration: none" href="guestbook">guestbook</a>
+        <a style="text-decoration: none" href="contact">contact</a>
+
+    </div>
+</header>
+
+{% block content %}
+<h1 class="title"> User  <span>Profile</span></h1>
+<div class="user-profile">
+	
+    <div class="username">{{profile[0]}}</div>
+    <div class="email">	{{profile[1]}} </div>
+   <a href="{{ url_for('logout') }}" class="logout">Log Out </a>
+
+  
+</div>
+ {% endblock %}
+ <h1 style="color:white; font-size:2.5em; text-align:center;font-family: Coda, sans-serif;"> {{ title }} </h1>
+<p style = "color:white; font-size:1em; text-align:center;font-family: Coda, sans-serif;"> {{subtitle}} </p>
+<p style="color:white; font-size:1em; text-align:center;font-family: Coda, sans-serif;"> {{ body }} </p>
+</body>
+</html>
